@@ -16,10 +16,11 @@ foreach($news as $home):
 endforeach;
 
 $json =  json_encode([
+    'dados' => [
     'title' => $title,
     'abstract' => $abstract,
     'url' => $url,
     'img' => $img
-], JSON_UNESCAPED_UNICODE | JSON_PRETTY_PRINT);
+]], JSON_UNESCAPED_UNICODE | JSON_PRETTY_PRINT);
 
 echo $json;
