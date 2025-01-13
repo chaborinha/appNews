@@ -38,48 +38,13 @@ class Api
         return $response;
     }
 
-    public function homeNews(String $home = 'home')
+    public function getNews(String $news)
     {
-        $response = $this->curlInit($home);
-        
-        $responseData = json_decode($response, true);
-
-        return $responseData['results'];
-    }
-
-    public function scienceNews(String $science = 'science')
-    {
-        $response = $this->curlInit($science);
-        
-        $responseData = json_decode($response, true);
-
-        return $responseData['results'];
-    }
-
-    public function artsNews(String $arts = 'arts')
-    {
-        $response = $this->curlInit($arts);
-
-        $responseData = json_decode($response, true);
-
-        return $responseData;
-    }
-
-    public function usNews(String $us = 'us')
-    {
-        $response = $this->curlInit($us);
+        $response = $this->curlInit($news);
 
         $responseData = json_decode($response, true);
 
         return $responseData['results'];
     }
 
-    public function worldNews(String $world = 'world')
-    {
-        $response = $this->curlInit($world);
-
-        $responseData = json_decode($response, true);
-
-        return $responseData['results'];
-    }
 }
